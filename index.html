@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:;">
+  <title>Wine Casino – Sorteo y premios cripto</title>
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background:#f5f7fa; color:#333; }
+    nav { background:#4b001f; color:#fff; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    nav .menu a { color:#fff; margin:0 10px; text-decoration:none; }
+    nav button { background:#d4af37; color:#4b001f; padding:8px 16px; border:none; border-radius:4px; cursor:pointer; }
+    .banner { background:#70004d; color:#fff; text-align:center; padding:60px 20px; }
+    .banner h1 { font-size:2.5em; margin:0.3em 0; }
+    .banner p { margin:0.5em 0 1em; font-size:1.2em; }
+    .stats { display:flex; justify-content:center; gap:30px; margin-top:20px; }
+    .stat { text-align:center; }
+    .features { padding:40px 20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .feature { background:#fff; border-radius:8px; padding:20px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .feature button { margin-top:10px; background:#d4af37; color:#4b001f; border:none; padding:10px; border-radius:4px; cursor:pointer; }
+    .about, footer { padding:30px 20px; background:#fff; margin-top:40px; }
+    footer { background:#4b001f; color:#fff; text-align:center; }
+    #modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; }
+    #modal .box { background:#fff; padding:30px; border-radius:8px; width:320px; }
+    #modal label { display:block; margin:10px 0 5px; }
+    #modal input { width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; }
+    #modal button { margin-top:20px; width:100%; background:#4b001f; color:#fff; padding:10px; border:none; border-radius:4px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div id="modal">
+    <div class="box">
+      <h2>Registro Wine Casino</h2>
+      <form id="regForm" autocomplete="off">
+        <label>Email:</label><input type="email" id="email" required>
+        <label>Contraseña:</label><input type="password" id="pwd" minlength="6" required>
+        <button type="submit">Entrar al casino</button>
+      </form>
+    </div>
+  </div>
+
+  <nav>
+    <div class="logo"><strong>Wine Casino</strong></div>
+    <div class="menu"><a href="#">Home</a><a href="#">Juegos</a><a href="#">Promos</a><a href="#">VIP</a><a href="#">Soporte</a></div>
+    <button onclick="openRegister()">Registrar</button>
+  </nav>
+  
+  <section class="banner">
+    <h1>BENVENIDO A WINE CASINO</h1>
+    <p>Regístrate y recibe un bono exclusivo en criptomonedas</p>
+    <button onclick="openRegister()">REGISTRARSE</button>
+    <div class="stats">
+      <div class="stat"><div style="font-size:2em;">23 120</div><div>Jugadores conectados</div></div>
+      <div class="stat"><div style="font-size:2em;">15 M+</div><div>Jugadores registrados</div></div>
+      <div class="stat"><div style="font-size:2em;">$12 B+</div><div>Pagado a jugadores</div></div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature"><h3>Juegos Originals</h3><p>Juegos exclusivos provably fair en cadena de bloques.</p><button>Ver Juegos</button></div>
+    <div class="feature"><h3>Slots Licenciados</h3><p>Slots populares con gráficos de alta calidad y jackpots.</p><button>Ir a Slots</button></div>
+    <div class="feature"><h3>Promociones & Bonos</h3><p>Bonos regulares, giradas gratis, cashback semanal.</p><button>Ver Promos</button></div>
+    <div class="feature"><h3>Club VIP</h3><p>Beneficios exclusivos y premios mensuales para miembros VIP.</p><button>Unirse al VIP</button></div>
+  </section>
+
+  <section class="about">
+    <h2>Acerca de Wine Casino</h2>
+    <p>Desde 2025 ofrecemos una experiencia de juego cripto descentralizada y transparente. Nuestra plataforma blockchain y contratos inteligentes garantizan juego limpio, retiros rápidos y total protección de tus fondos.</p>
+    <p>Registro en menos de 30 segundos con solo correo electrónico y soporte 24/7 disponible para ayudarte.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Wine Casino | Todos los derechos reservados</p>
+    <p>Política de privacidad · Términos de servicio · Licencias & Seguridad · AML</p>
+    <p>Soporte: soporte@winecasino.com · Socios: partners@winecasino.com</p>
+  </footer>
+
+<script>
+  document.getElementById('regForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const pwd = document.getElementById('pwd').value;
+    if(!email || !pwd) return;
+    document.getElementById('modal').style.display = 'none';
+  });
+  function openRegister(){document.getElementById('modal').style.display='flex';}
+</script>
+
+</body>
+</html>
